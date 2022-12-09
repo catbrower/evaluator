@@ -15,7 +15,7 @@ const OPERATORS = {
         precedence: 3,
         associativity: ASSOC.Left,
         eval: (a, b) => {
-            return a / b;
+            return b / a;
         }
     },
     "*": {
@@ -36,7 +36,7 @@ const OPERATORS = {
         precedence: 2,
         associativity: ASSOC.Left,
         eval: (a, b) => {
-            return a - b;
+            return b - a;
         }
     }
 }
