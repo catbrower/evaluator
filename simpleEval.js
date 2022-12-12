@@ -8,7 +8,7 @@ const OPERATORS = {
         precedence: 4,
         associativity: ASSOC.Right,
         eval: (a, b) => {
-            return Math.pow(a, b);
+            return Math.pow(b, a);
         }
     },
     "/": {
@@ -47,7 +47,39 @@ const FUNCTIONS = {
         associativity: ASSOC.Right,
         num_operands: 1,
         eval: (args) => {
-            return Math.sin(parseFloat(args[0]));
+            return Math.sin(args[0]);
+        }
+    },
+    "cos": {
+        precedence: 10,
+        associativity: ASSOC.Right,
+        num_operands: 1,
+        eval: (args) => {
+            return Math.cos(args[0]);
+        }
+    },
+    "tan": {
+        precedence: 10,
+        associativity: ASSOC.Right,
+        num_operands: 1,
+        eval: (args) => {
+            return Math.tan(args[0]);
+        }
+    },
+    "log": {
+        precedence: 10,
+        associativity: ASSOC.Right,
+        num_operands: 1,
+        eval: (args) => {
+            return Math.log(args[0]);
+        }
+    },
+    "pi": {
+        precedence: 10,
+        associativity: ASSOC.Right,
+        num_operands: 0,
+        eval: (args) => {
+            return Math.PI;
         }
     }
 }
