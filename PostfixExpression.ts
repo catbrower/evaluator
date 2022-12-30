@@ -51,7 +51,7 @@ export class PostfixExpression {
                 let o1 = token;
                 let o2 = operatorsStack[operatorsStack.length - 1];
                 while((o2 instanceof OperatorToken || o2 instanceof FunctionToken) && (((o1.getAssociativity()) === ASSOC.Left && this.getPrecedence(o1) <= this.getPrecedence(o2)) 
-                    || (this.getAssociativity(o1) === ASSOC.Right && getPrecedence(o1) < getPrecedence(o2)))) {
+                    || (this.getAssociativity(o1) === ASSOC.Right && this.getPrecedence(o1) < this.getPrecedence(o2)))) {
                     outputQueue.push(operatorsStack.pop() as Token);
                     o2 = operatorsStack[operatorsStack.length - 1];
                 }
